@@ -1,5 +1,16 @@
 # Ford Radar Competitivo — Sprint Cybersecurity
 
+## Integrantes do grupo
+
+| Nome | RM |
+|---|---|
+| Carlos Eduardo | 556785 |
+| Giulia Rocha | 558084 |
+| Caio Rossini | 555084 |
+| Gabriel Danius | 555747 |
+
+---
+
 Backend FastAPI da plataforma de Inteligência Competitiva Automotiva
 (Challenge Ford / FIAP 2026). Esta entrega cobre a **Sprint de
 Cybersecurity** (100/100 pts) sobre a stack já definida no desafio:

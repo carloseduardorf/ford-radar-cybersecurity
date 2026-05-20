@@ -10,6 +10,15 @@ verificam.
 > e recebe os webhooks do n8n. Os controles aqui aplicáveis cobrem 100 %
 > da rubrica de cybersecurity (100/100 pontos).
 
+## Integrantes do grupo
+
+| Nome | RM |
+|---|---|
+| Carlos Eduardo | 556785 |
+| Giulia Rocha | 558084 |
+| Caio Rossini | 555084 |
+| Gabriel Danius | 555747 |
+
 ---
 
 ## 1 · Segurança de Entrada e Validação de Dados — 20 pts

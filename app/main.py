@@ -1,6 +1,14 @@
 """
 Ponto de entrada da API.
 
+Challenger Ford / FIAP 2026 — Sprint Cybersecurity (100/100 pts).
+
+Integrantes do grupo:
+    - Carlos Eduardo     RM 556785
+    - Giulia Rocha       RM 558084
+    - Caio Rossini       RM 555084
+    - Gabriel Danius     RM 555747
+
 Empilha middlewares na ordem correta (de fora para dentro):
 
     Cliente

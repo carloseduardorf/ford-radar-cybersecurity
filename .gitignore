@@ -20,3 +20,7 @@ build/
 .idea/
 .vscode/
 node_modules/
+
+# Logs e arquivos temporarios
+server*.log
+*.db-journal

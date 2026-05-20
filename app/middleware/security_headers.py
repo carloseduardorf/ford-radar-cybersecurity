@@ -42,11 +42,26 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
             "Permissions-Policy",
             "geolocation=(), microphone=(), camera=(), payment=()",
         )
-        # API JSON-only — CSP fechado é suficiente
-        h.setdefault(
-            "Content-Security-Policy",
-            "default-src 'none'; frame-ancestors 'none'; base-uri 'none'",
-        )
+        # API JSON-only — CSP fechado é suficiente.
+        # Exceção: /docs e /redoc carregam JS/CSS do CDN do Swagger; em dev
+        # afrouxamos o CSP apenas para essas rotas (em prod elas não existem).
+        path = request.url.path
+        if not settings.is_production and path in {"/docs", "/redoc"}:
+            h.setdefault(
+                "Content-Security-Policy",
+                "default-src 'self'; "
+                "script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; "
+                "style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; "
+                "img-src 'self' data: https://fastapi.tiangolo.com; "
+                "font-src 'self' https://cdn.jsdelivr.net; "
+                "connect-src 'self'; "
+                "frame-ancestors 'none'; base-uri 'none'",
+            )
+        else:
+            h.setdefault(
+                "Content-Security-Policy",
+                "default-src 'none'; frame-ancestors 'none'; base-uri 'none'",
+            )
         h.setdefault("Cross-Origin-Resource-Policy", "same-origin")
         # Remove header que vaza versão do servidor
         if "server" in h:
